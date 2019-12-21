@@ -1,0 +1,20 @@
+{
+  "name": "DNS Updater",
+  "version": "1.0",
+  "slug": "dns_updater",
+  "description": "Update an A record on Route53",
+  "startup": "before",
+  "boot": "auto",
+  "ports": {
+    "80/tcp": 8080
+  },
+  "options": {
+    "server": "null",
+    "cron_pattern": "null"
+  },
+  "schema": {
+    "server": "str",
+    "cron_pattern": "str"
+  },
+  "image": "hub/{arch}-dns-updater"
+}
