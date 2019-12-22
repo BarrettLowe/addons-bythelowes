@@ -17,11 +17,14 @@
 
   "options": {
     "server": "null",
-    "cron_pattern": "null"
+    "cron_pattern": "null",
+    "secret": "null",
+    "api_endpoint": "null"
   },
   "schema": {
     "server": "str",
-    "cron_pattern": "str"
-  },
-  "image": "hub/{arch}-dns-updater"
+    "cron_pattern": "str",
+    "secret": "str",
+    "api_endpoint": "str"
+  }
 }

@@ -1,9 +1,12 @@
-#!/bin/bash
-sed -e
+#!/usr/bin/env bash
+echo "running run.sh"
 
 CONFIG_PATH=/data/options.json
 
-SERVER=$(jq --raw-output ".server" $CONFIG_PATH)
-CRON_PATTERN=$(jq --raw-output ".cron_pattern" $CONFIG_PATH)
+HOSTNAME=$(jq --raw-output ".server" $CONFIG_PATH)
+SECRET=$(jq --raw-output ".secret" $CONFIG_PATH)
+URL=$(jq --raw-output ".api_endpoint" $CONFIG_PATH)
 
-echo "Ima try to update $SERVER with ${CRON_PATTERN}"
+echo "Ima try to update $HOSTNAME using $SECRET at $URL"
+
+sh /ddns_update.sh "$HOSTNAME" "$SECRET" "$URL"
