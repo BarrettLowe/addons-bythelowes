@@ -1,5 +1,9 @@
-FROM alpine:latest
-MAINTAINER Barrett Lowe
+ARG BUILD_FROM=alpine:3.11
+FROM ${BUILD_FROM}
+
+SHELL = ["/bin/bash", "-o", "pipefail", "-c"]
+
+ENV TERM="xterm-256color"
 
 # Install cron
 RUN apk update && apk add dcron wget rsync ca-certificates sshpass openssh-client bash bash-doc bash-completion tar jq curl && rm -rf /var/cache/apk/*
