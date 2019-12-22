@@ -1,7 +1,7 @@
 {
-  "name": "DNS Updater",
+  "name": "Route53 DNS Updater",
   "version": "1.0",
-  "slug": "dns_updater",
+  "slug": "route53_dns_updater",
   "description": "Update an A record on Route53",
   "startup": "before",
   "boot": "auto",
@@ -17,7 +17,7 @@
 
   "options": {
     "server": "null",
-    "cron_pattern": "null",
+    "cron_pattern": "*/5 * * * *",
     "secret": "null",
     "api_endpoint": "null"
   },
