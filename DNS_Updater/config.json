@@ -16,15 +16,23 @@
   ],
 
   "options": {
-    "server": "null",
     "cron_pattern": "*/5 * * * *",
-    "secret": "null",
-    "api_endpoint": "null"
-  },
+    "server":
+    [        
+        {        
+            "host": "null",
+            "secret": "null",
+            "api_endpoint": "null"
+        }
+    ],
   "schema": {
-    "server": "str",
     "cron_pattern": "str",
-    "secret": "str",
-    "api_endpoint": "str"
+    "server": [
+        {
+            "host": "null",
+            "secret": "str",
+            "api_endpoint": "str"
+        }
+    ]
   }
 }
