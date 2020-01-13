@@ -1,12 +1,12 @@
-#!/bin/bash
+#!/usr/bin/env bashio
 # call script as:
 # ./dynamic_dns_lambda_client.sh host1.dyn.example.com. SHARED_SECRET_1 "abc123.execute-api.us-west-2.amazonaws.com/prod"
 
 # If the script is called with no arguments, show an instructional error message.
 if [ $# -eq 0 ]
     then
-    echo 'The script requires hostname and shared secret arguments.'
-    echo "ie  $0 host1.dyn.example.com. sharedsecret \"abc123.execute-api.us-west-2.amazonaws.com/prod\""
+    bashio::log.error 'The script requires hostname and shared secret arguments.'
+    bashio::log.error "ie  $0 host1.dyn.example.com. sharedsecret \"abc123.execute-api.us-west-2.amazonaws.com/prod\""
     exit
 fi
 
