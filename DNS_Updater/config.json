@@ -30,7 +30,7 @@
     "cron_pattern": "str",
     "server": [
         {
-            "host": "null",
+            "host": "str",
             "secret": "str",
             "api_endpoint": "str"
         }
