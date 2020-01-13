@@ -25,6 +25,7 @@
             "api_endpoint": "null"
         }
     ],
+  },
   "schema": {
     "cron_pattern": "str",
     "server": [
