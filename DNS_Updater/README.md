@@ -17,7 +17,7 @@ comparison to installing any other Hass.io add-on.
 ## Configuration
 **Note**: _Remember to restart the add-on when the configuration is changed._
 
-- __server__ - The domain to update eg. *this.domain.example.com.* (When following the instructions from the link above, you will have the dot at the end)
+- __host__ - The domain to update eg. *this.domain.example.com.* (When following the instructions from the link above, you will have the dot at the end)
 - __api_endpoint__ - The the endpoint setup in API Gateway on AWS
 - __cron_pattern__ - Cron pattern to specify how often the DNS should be updated (API Gateway Charges may apply check before updating too often)
 - __secret__ - The secret specified in the config file in S3 used to verify the request is authenticated 
@@ -26,8 +26,8 @@ comparison to installing any other Hass.io add-on.
 ```json
 {
     "cron_pattern": "*/5 * * * *",
-    "servers": [
-        "server": "my.domain.com.",
+    "server": [
+        "host": "my.domain.com.",
         "secret": "s3_config_secret",
         "api_endpoint": "https://abcd012345.execute-api.<REGION>.amazonaws.com/prod"
     ]
