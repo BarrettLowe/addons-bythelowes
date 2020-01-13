@@ -25,9 +25,11 @@ comparison to installing any other Hass.io add-on.
 ### Config Example
 ```json
 {
-  "server": "my.domain.com.",
-  "cron_pattern": "*/5 * * * *",
-  "secret": "s3_config_secret",
-  "api_endpoint": "https://abcd012345.execute-api.<REGION>.amazonaws.com/prod"
+    "cron_pattern": "*/5 * * * *",
+    "servers": [
+        "server": "my.domain.com.",
+        "secret": "s3_config_secret",
+        "api_endpoint": "https://abcd012345.execute-api.<REGION>.amazonaws.com/prod"
+    ]
 }
 ```

@@ -3,10 +3,14 @@ echo "running run.sh"
 
 CONFIG_PATH=/data/options.json
 
-HOSTNAME=$(jq --raw-output ".server" $CONFIG_PATH)
-SECRET=$(jq --raw-output ".secret" $CONFIG_PATH)
-URL=$(jq --raw-output ".api_endpoint" $CONFIG_PATH)
+jq -c ".servers[]" $CONFIG_PATH | while read s; do
 
-echo "Ima try to update $HOSTNAME using $SECRET at $URL"
 
-sh /ddns_update.sh "$HOSTNAME" "$SECRET" "$URL"
+    HOSTNAME=$(echo "$s" | jq --compact-output ".host")
+    SECRET=$(echo "$s" | jq --compact-output ".secret")
+    URL=$(echo "$s" | jq --compact-output ".api_endpoint")
+
+    echo "Ima try to update $HOSTNAME using $SECRET at $URL"
+
+    sh /ddns_update.sh "$HOSTNAME" "$SECRET" "$URL"
+done
