@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-echo "running run.sh"
+#!/usr/bin/env bashio
+bashio::log.info "running run.sh"
 
 CONFIG_PATH=/data/options.json
 
@@ -10,7 +10,7 @@ jq -c ".servers[]" $CONFIG_PATH | while read s; do
     SECRET=$(echo "$s" | jq --compact-output ".secret")
     URL=$(echo "$s" | jq --compact-output ".api_endpoint")
 
-    echo "Ima try to update $HOSTNAME using $SECRET at $URL"
+    bashio::log.info "Trying to update $HOSTNAME using $SECRET at $URL"
 
     sh /ddns_update.sh "$HOSTNAME" "$SECRET" "$URL"
 done
