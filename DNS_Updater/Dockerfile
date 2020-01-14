@@ -1,4 +1,4 @@
-ARG BUILD_FROM=alpine:3.11
+ARG BUILD_FROM=hassioaddons/base
 FROM ${BUILD_FROM}
 
 ENV TERM="xterm-256color"
