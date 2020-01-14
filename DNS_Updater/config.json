@@ -1,6 +1,6 @@
 {
   "name": "Route53 DNS Updater",
-  "version": "1.1",
+  "version": "1.2",
   "slug": "route53_dns_updater",
   "description": "Update an A record on Route53",
   "startup": "before",
